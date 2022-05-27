@@ -34,10 +34,11 @@ const App = () => {
                     <input type="text" placeholder="Enter a city" name="city" id="city" autoComplete="off" onChange={handleChange} />
                 </form>
             </div>
-            <div className="yelp-container">
-                {data && data.map((item, index) => <YelpItem key={index} item={item} />)}
-            </div>
-            <div id="test"></div>
+            {city && (
+                <div className="yelp-container">
+                    {data && data.map((item, index) => <YelpItem key={index} item={item} />)}
+                </div>
+            )}
         </div>
     )
 }
