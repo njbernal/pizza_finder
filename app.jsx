@@ -22,7 +22,8 @@ const App = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let city = document.getElementById('city').value;
-        const url = `http://localhost:3000/${city}`;
+        //const url = `http://localhost:3000/apps/pizzafinder/${city}`;
+        const url = `https://nickbernal.com/apps/pizzafinder/${city}`;
         doFetch(url);
     }
 
