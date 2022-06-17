@@ -15,8 +15,8 @@ const useDataApi = () => {
             dispatch({ type: "FETCH_INIT" });
             try {
                 const result = await axios(url);
-                if (result.error) didCancel == true;
-                console.log(result.error);
+                if (result.data.error) didCancel == true;
+                console.log(result.data.error);
                 if (!didCancel) {
                     dispatch({ type: "FETCH_SUCCESS", payload: result.data.businesses });
                 }
