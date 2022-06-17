@@ -8,7 +8,6 @@ app.use(cors());
 
 const allowed_ips = [
     '10.37.1.243',
-    'njbernal.github.io'
 ]
 
 const config = {
