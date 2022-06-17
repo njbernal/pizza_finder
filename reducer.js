@@ -1,12 +1,7 @@
 const useDataApi = () => {
     const { useState, useEffect, useReducer } = React;
     const [url, setUrl] = useState("");
-    const yelpApi = 'XQ9sGCeCOPzMy-2eY050U3rKE9sLrxeMXA9-Ltz8iD7eg2_mFo1WPj0KdqQeq1qfXYnsErwKuuoAoWUCNH0-KiJ3CETyJnuxB1Zx1rDxAfVHzjCeEe-qCVAVuMIoYnYx';
-    const config = {
-        headers: {
-            'Authorization': `Bearer ${yelpApi}`,
-        }
-    }
+
     const [state, dispatch] = useReducer(dataFetchReducer, {
         isLoading: false,
         isError: false,
@@ -19,7 +14,7 @@ const useDataApi = () => {
         const fetchData = async () => {
             dispatch({ type: "FETCH_INIT" });
             try {
-                const result = await axios(url, config);
+                const result = await axios(url);
                 if (!didCancel) {
                     dispatch({ type: "FETCH_SUCCESS", payload: result.data.businesses });
                 }

@@ -22,7 +22,7 @@ const App = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let city = document.getElementById('city').value;
-        const url = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${city}&term=pizza&sort_by=rating&open_now=true`;
+        const url = `http://localhost:3000/${city}`;
         doFetch(url);
     }
 
