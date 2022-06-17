@@ -7,7 +7,8 @@ const app = express();
 app.use(cors());
 
 const allowed_ips = [
-    '10.37.1.243'
+    '10.37.1.243',
+    'njbernal.github.io'
 ]
 
 const config = {
@@ -23,7 +24,7 @@ app.get(`/apps/pizzafinder/:city`, (req, res) => {
         ip = ip.split('//');
         ip = ip[1].split(':')[0];
         if (!allowed_ips.includes(ip)) {
-            res.send(`Error, ip ${ip} is not allowed here.`);
+            res.send({ error: `Error, ip ${ip} is not allowed here.` });
         }
     }
 
